@@ -24,9 +24,8 @@ const options = {
       .then((data) => {
 
        this.movies = data.movies
-       console.log(data.movies)
        this.genres= [...new Set(this.movies.map(movie => movie.genres).flat())]
-     
+       this.moviesfiltered=this.movies 
    
       } )
       .catch (err => console.log(err))
@@ -38,14 +37,17 @@ const options = {
      this.filtrar()
 },
 keepselect(e){
-this.seleted= e.target.value
+this.select= e.target.value
 this.filtrar()
 },
 filtrar(){
-  this.moviesfiltered =this.movies.filter(movie => movie.title.tolowerCase().incluides (this.search.tolowerCase()) &&
-  ( this.select =="all"|| movie.genres.includes(this.select)))
+  this.moviesfiltered =this.movies.filter(movie => movie.title.toLowerCase().includes (this.search.toLowerCase()) &&( this.select =="all"|| movie.genres.includes(this.select)))
 
 }
-}
+},
+
+
  }
 
+ const app = createApp(options)
+ app.mount ('#app')

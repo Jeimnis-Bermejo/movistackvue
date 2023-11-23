@@ -30,41 +30,32 @@
 
         </header>
         <main class=" bg-black flex flex-col items-center min-h-screen ">
-       
+
             <h1 class="text-white text-5xl ">MOVIES</h1>
 
             <div class="flex gap-96  m-4">
-                <div>
-
-                    <input id="busqueda" type="text" placeholder="Search Movie" v-on:input="keepsearch">
-                </div>
-                <div>
-                    <select id="select"  v-on:input="keepselect">
-                        <option name="genres" value="all">All Genres</option>
-                        <template v-if="genres.length > 0" v-for="genre of genres">
-                            <option v-bind:value="genre">{{genre}}</option>
-                        </template>
-                    </select>
-                </div>
-                {{filtrar}}
-            </div>
-            <div class="flex  flex-wrap justify-center gap-5 " id="contenedor"></div>
-            <template v-if="moviesfiltered.length > 0" v-for="movie of moviesfiltered">
-                <div
-                    class="flex flex-col  border  border-white-500  h-[40rem] w-[30rem] border-solid-5 p-8 rounded-lg mt-5  justify-center">
-                    
-                    <img class=" object-contain rounded-xl "
-                        v-bind:src="'https://moviestack.onrender.com/static/' + movie.image" alt="imagen"></img>
-                    <h2 class=" text-white justify-items-start text-center p-1 font-bold  ">{{movie.title}}</h2>
-                    <h3 class=" text-white text-left justify-items-start p-2 ">{{movie.tagline}}</h3>
-                    <p class=" text-white text-left justify-items-start">{{movie.overview}}</p>
-                    <a class="text-black self-center  w-16 m-3 text-center bg-white border  border-white rounded"  v-bind:href="'./details.html?id='+ movie.id" id="id">Details</a>
+                <template>
                     <div>
-
-            </template>
-            <template v-else>
-                <h2> "there are no movies"</h2>
-            </template>
+                        <div id="contenedorMovies">
+                            <div v-for="movie in movies" :key="movie.id"
+                                class="flex flex-col border border-white-500 h-[40rem] w-[30rem] border-solid-5 p-8 rounded-lg mt-5 justify-center">
+                                <img class="object-contain rounded-xl"
+                                    :src="'https://moviestack.onrender.com/static/' + movie.image" alt="imagen">
+                                <h2 class="text-white justify-items-start text-center p-1 font-bold">{{ movie.title }}
+                                </h2>
+                                <h3 class="text-white text-left justify-items-start p-2">{{ movie.tagline }}</h3>
+                                <p class="text-white text-left justify-items-start">{{ movie.overview }}</p>
+                                <a class="text-black self-center w-16 m-3 text-center bg-white border border-white rounded"
+                                    :href="'details.html?id=' + movie.id">Details</a>
+                                <button @click="toggleFavorite(movie.id)"
+                                    :class="{ 'text-red-500': isFavorite(movie.id) }"
+                                    class="text-black self-center w-16 m-3 text-center bg-white border border-white rounded">Favs</button>
+                            </div>
+                        </div>
+                        <h2 v-if="movies.length === 0" class="text-white text-2xl">This movie is not available, please
+                            try to find another one</h2>
+                    </div>
+                </template>
         </main>
         <footer class="  bg-violet-950 text-2xl  text-blue-50 ">
             <h2 class=" text-center  ">
