@@ -52,7 +52,7 @@
             <template v-if="moviesfiltered.length > 0" v-for="movie of moviesfiltered">
                 <div
                     class="flex flex-col  border  border-white-500  h-[40rem] w-[30rem] border-solid-5 p-8 rounded-lg mt-5  justify-center">
-                    
+                    <button v-on:click="favorites.includes(movie.id)?removefavs(movie.id):addfavs(movie.id)"  class="text-black self-center  w-16 m-3 text-center bg-white border  border-white rounded">favs</button>
                     <img class=" object-contain rounded-xl "
                         v-bind:src="'https://moviestack.onrender.com/static/' + movie.image" alt="imagen"></img>
                     <h2 class=" text-white justify-items-start text-center p-1 font-bold  ">{{movie.title}}</h2>
