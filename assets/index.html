@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieStack</title>
+    <link rel="shortcut icon" href="./img/3661087.png" type="image/x-icon">
+    <link rel="stylesheet" href="./style/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body>
+    <div class="w-full min-h-screen flex flex-col ">
+        <header class="bg-violet-950  flex justify-between items-center px-10 h-20 ">
+            <div class="flex items-center ">
+                <img class="h-10" src="./img/video.png" alt="icono">
+                <h1 class="text-white text-5xl font-sans">MovieStack</h1>
+            </div>
+
+            <nav class="items-center ">
+                <a class="text-black text-xl bg-white p-3 m-2 rounded-2xl hover:bg-black hover:text-white" href="#">HOME</a>
+                <a class="text-black text-xl bg-white p-3 m-2 rounded-2xl  hover:bg-black hover:text-white"
+                    href="./../assets/pages/movies.html">MOVIES</a>
+                <a class="text-black text-xl bg-white p-3 m-2 rounded-2xl hover:bg-black hover:text-white"
+                    href="./pages/favs.html">FAVS</a>
+
+
+        </header>
+        <main class=" bg-black flex flex-col grow  ">
+            <div class=" flex items-center flex-col gap-8">
+
+                <img class="object-cover object-top h-96 w-full" src="./img/peli-cula-avatar-1640166601.jpg"
+                    alt="Banner">
+                <p class=" flex text-xl text-justify w-3/4 text-blue-50 font-serif">
+                    MovieStack mission is to bring the magic of cinema to screens around the world. We strive to create
+                    and
+                    produce films that entertain, inspire, and captivate our audience. We seek to tell unique and
+                    meaningful
+                    stories that transcend borders and cultures, leaving a lasting impact on the film industry. We are
+                    committed
+                    to delivering exceptional cinematic experiences that transport people to different worlds and ignite
+                    their
+                    imagination. Our passion for cinema drives every aspect of our work, from script development to film
+                    production and distribution. We aim to be recognized as leaders in creating innovative and
+                    high-quality
+                    cinematic content, making an indelible mark on the history of film."</p>
+                <div id="contenedorCallAction" class="flex space-x-52 text-center p-8">
+                    <article>
+                        <img class="  object-cover h-80 p-3"
+                            src="./../assets/img/Peliculas-infantiles-2023-800x432.jpg.webp" alt="Element">
+                        <a class="text-white text-2xl  " href="./../assets/pages/movies.html">¡last day on our
+                            screens!</a>
+                    </article>
+                    <article>
+                        <img class=" object-cover h-80 p-3"
+                            src="./../assets/img/john-wick-4-the-cast-of-the-action-sequel_qwbd.jpg" alt="jhonwick">
+                        <a class="text-white p-5 text-2xl " href="./../assets/pages/favs.html">¡20% discount on your
+                            ticket!</a>
+
+                    </article>
+                </div>
+            </div>
+            <a href="./details.html"></a>
+        </main>
+        <footer class=" h-1/5 bg-violet-950 text-2xl   text-blue-50 ">
+            <h2 class=" text-center  ">
+                MindHub - Cohort 52-Jeimnis Bermejo
+            </h2>
+        </footer>
+    </div>
+    <script type="module" src="./Js/tailwind.config.js"></script>
+
+
+
+</body>
+
+</html>

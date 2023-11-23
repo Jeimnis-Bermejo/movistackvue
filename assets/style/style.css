@@ -1,0 +1,59 @@
+@media only screen and (min-width: 320px) and (max-width:639px) {
+
+
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 35vh;
+        
+    }
+
+    main {
+        display: flex;
+        min-height: 80vh;
+
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+
+    }
+
+    p {
+        margin-bottom: 1rem;
+        font-size: 1rem;
+        width: 18rem;
+        align-items: center;
+        
+
+
+    }
+
+    article {
+          
+        align-items: center;
+        text-overflow: ellipsis;  
+    }
+
+img{
+    height: 30rem;
+    width: 15rem;
+    object-fit: contain;
+   
+}
+
+#contenedorCallAction{
+   justify-content: center; 
+   flex-direction: column;
+   align-items: center;
+
+}
+
+
+}
+
